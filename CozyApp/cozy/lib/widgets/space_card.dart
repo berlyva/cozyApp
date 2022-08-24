@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore, sized_box_for_whitespace
 
+import 'package:cozy/models/space.dart';
 import 'package:cozy/theme.dart';
 import 'package:flutter/material.dart';
 
 class SpaceCard extends StatelessWidget {
-  const SpaceCard({Key? key}) : super(key: key);
+  const SpaceCard({Key? key, required this.space}) : super(key: key);
 
+  final Space space;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +20,7 @@ class SpaceCard extends StatelessWidget {
             child: Stack(
               children: [
                 Image.asset(
-                  'assets/images/space1.png',
+                  space.imageUrl,
                 ),
                 Align(
                   alignment: Alignment.topRight,
@@ -42,7 +44,7 @@ class SpaceCard extends StatelessWidget {
                             height: 22,
                           ),
                           Text(
-                            '4/5',
+                            '${space.rating}/5',
                             style: whiteTextStyle.copyWith(
                               fontSize: 13,
                             ),
@@ -63,7 +65,7 @@ class SpaceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Kuretakeso Hott",
+              space.name,
               style: blackTextStyle.copyWith(
                 fontSize: 18,
               ),
@@ -73,7 +75,7 @@ class SpaceCard extends StatelessWidget {
             ),
             Text.rich(
               TextSpan(
-                text: '\$52',
+                text: '\$${space.prices}',
                 style: purpleTextStyle.copyWith(
                   fontSize: 16,
                 ),
@@ -85,6 +87,13 @@ class SpaceCard extends StatelessWidget {
                       )),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              "${space.city},${space.country}",
+              style: greyTextStyle.copyWith(),
             )
           ],
         )

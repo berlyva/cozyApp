@@ -47,7 +47,7 @@ class SplashPage extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      "Stop membuang banyak waktu \n pada tempat yang tidak habitable",
+                      "Stop membuang banyak waktu \n pada tempat yang tidak habitables",
                       style: greyTextStyle.copyWith(fontSize: 16),
                     ),
                     SizedBox(
