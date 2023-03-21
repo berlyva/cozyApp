@@ -1,4 +1,5 @@
 import 'package:cozy/theme.dart';
+import 'package:cozy/widgets/facility_item.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
@@ -72,7 +73,7 @@ class DetailPage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Apartmen Nih",
+                                  "Apartmen Nich",
                                   style: blackTextStyle.copyWith(
                                     fontSize: 22,
                                   ),
@@ -150,6 +151,87 @@ class DetailPage extends StatelessWidget {
                           style: regularTextStyle.copyWith(
                             fontSize: 16,
                           ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: edge,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            FacilityItem(
+                              name: "kitchen",
+                              imageUrl: 'assets/images/icon_kitchen.png',
+                              total: 2,
+                            ),
+                            FacilityItem(
+                              name: "Bedroom",
+                              imageUrl: "assets/images/icno_bedroom.png",
+                              total: 3,
+                            ),
+                            FacilityItem(
+                              name: "Big Lemari",
+                              imageUrl: "assets/images/icon_cupboard.png",
+                              total: 3,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      //NOTES PHOTO
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: edge,
+                        ),
+                        child: Text(
+                          ' Photos',
+                          style: regularTextStyle.copyWith(
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Container(
+                        height: 88,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            SizedBox(
+                              width: edge,
+                            ),
+                            Image.asset(
+                              "assets/images/photo1.png",
+                              width: 110,
+                              height: 88,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(
+                              width: 18,
+                            ),
+                            Image.asset(
+                              "assets/images/photo2.png",
+                              width: 110,
+                              height: 88,
+                              fit: BoxFit.cover,
+                            ),
+                            const SizedBox(
+                              width: 18,
+                            ),
+                            Image.asset(
+                              "assets/images/photo3.png",
+                              width: 110,
+                              height: 88,
+                              fit: BoxFit.cover,
+                            )
+                          ],
                         ),
                       ),
                     ],
